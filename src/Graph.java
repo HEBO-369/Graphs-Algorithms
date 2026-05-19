@@ -102,9 +102,14 @@ public class Graph {
         DijkstraSP dijkstra = new DijkstraSP(this, source);
         int[] result = new int[this.V()];
         for (int i = 0; i < this.V(); i++) {
-            result[i] = dijkstra.KruskalMST(i);
+            result[i] = dijkstra.distTo(i);
         }
         return result;
+    }
+
+    public int[] dagShortestPath(int source) {
+        AcyclicSP sp = new AcyclicSP(this, source);
+        return sp.distTo();
     }
 
 

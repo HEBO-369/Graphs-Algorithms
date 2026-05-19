@@ -39,7 +39,7 @@ public class DijkstraSP {
         }
     }
 
-    public int KruskalMST(int v) {
+    public int distTo(int v) {
         return distTo[v];
     }
 
@@ -55,7 +55,7 @@ public class DijkstraSP {
 
         @Override
         public int compareTo(VertexDistance that) {
-            return Double.compare(this.distance, that.distance);
+            return Integer.compare(this.distance, that.distance);
         }
     }
 
