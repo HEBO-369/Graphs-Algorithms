@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 public class Graph {
@@ -18,6 +19,7 @@ public class Graph {
         if(V <= 0 ) throw new IllegalArgumentException("Number of Vertices must be positive ");
         this.V = V ;
         this.E = 0;
+        this.directed = directed;
         this.edges = new ArrayList<Edge>();
         adj = (ArrayList<Edge>[]) new ArrayList[V];
         for ( int v = 0 ; v < V ; v++){
@@ -64,5 +66,46 @@ public class Graph {
     public Iterable<Edge> edges() {
         return edges;
     }
+
+
+    /**
+     * Lab requirments
+     **/
+
+    public void addEdge(int v, int w, int weight) {
+        addEdge(new Edge(v, w, weight, false));
+    }
+
+    public void addDirectedEdge(int v, int w, int weight) {
+        addEdge(new Edge(v, w, weight, true));
+    }
+
+    public List<Edge> PrimMST() {
+        LazyPrimMST lazyPrimMST = new LazyPrimMST(this);
+        List<Edge> result = new ArrayList<>();
+        for (Edge edge : lazyPrimMST.PrimMST()) {
+            result.add(edge);
+        }
+        return result;
+    }
+
+    public List<Edge> kruskalMST() {
+        KruskalMST kruskal = new KruskalMST(this);
+        List<Edge> result = new ArrayList<>();
+        for (Edge edge : kruskal.KruskalMST()) {
+            result.add(edge);
+        }
+        return result;
+    }
+
+    public int[] dijkstra(int source) {
+        DijkstraSP dijkstra = new DijkstraSP(this, source);
+        int[] result = new int[this.V()];
+        for (int i = 0; i < this.V(); i++) {
+            result[i] = dijkstra.KruskalMST(i);
+        }
+        return result;
+    }
+
 
 }
