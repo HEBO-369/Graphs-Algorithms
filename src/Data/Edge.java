@@ -1,4 +1,6 @@
-public class Edge {
+package Data;
+
+public class Edge implements Comparable<Edge> {
         private final int v, w;
     private final int weight;
     private final boolean directed;

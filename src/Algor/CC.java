@@ -1,3 +1,8 @@
+package Algor;
+
+import Data.Edge;
+import Data.Graph;
+
 public class CC {
     private boolean marked[];
     private int id[];

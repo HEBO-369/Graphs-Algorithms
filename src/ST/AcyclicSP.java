@@ -1,4 +1,8 @@
-import java.util.List;
+package ST;
+
+import Data.Edge;
+import Data.Graph;
+
 import java.util.Stack;
 
 public class AcyclicSP {
@@ -50,7 +54,7 @@ public class AcyclicSP {
         onStack[v] = true;
         for (Edge w : G.adj(v)) {
             if (onStack[w.other(v)]) {
-                throw new IllegalArgumentException("Graph contains a cycle");
+                throw new IllegalArgumentException("Data.Graph contains a cycle");
             }
             if (!marked[w.other(v)]) {
                 dfs(G, w.other(v));

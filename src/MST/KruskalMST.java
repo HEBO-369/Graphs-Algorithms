@@ -1,3 +1,9 @@
+package MST;
+
+import Algor.*;
+import Data.Edge;
+import Data.Graph;
+
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;

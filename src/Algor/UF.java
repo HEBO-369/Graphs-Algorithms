@@ -1,4 +1,6 @@
-class UF {
+package Algor;
+
+public class UF {
     private int[] parent;
     private int[] rank;
 

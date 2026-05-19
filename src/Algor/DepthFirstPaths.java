@@ -1,7 +1,10 @@
+package Algor;
+
+import Data.Edge;
+import Data.Graph;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Stack;
 
 public class DepthFirstPaths {
     private boolean[] marked ;

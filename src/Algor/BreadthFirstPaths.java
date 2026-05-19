@@ -1,3 +1,8 @@
+package Algor;
+
+import Data.Edge;
+import Data.Graph;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
