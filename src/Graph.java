@@ -6,6 +6,7 @@ public class Graph {
     private int E ;
     private ArrayList<Edge>[] adj;
     public ArrayList<Edge> edges;
+    public boolean directed;
 
 
 
@@ -13,7 +14,7 @@ public class Graph {
     * Initializes an empty graph with V vertices and 0 edges.
     * param V the number of vertices
     **/
-    public Graph(int V ){
+    public Graph(int V, boolean directed) {
         if(V <= 0 ) throw new IllegalArgumentException("Number of Vertices must be positive ");
         this.V = V ;
         this.E = 0;
@@ -29,7 +30,7 @@ public class Graph {
         validateVertex(v);
         validateVertex(w);
         adj[v].add(edge);
-        adj[w].add(edge);
+        if (!directed) adj[w].add(edge);
         edges.add(edge);
         E++;
     }

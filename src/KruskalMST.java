@@ -21,6 +21,7 @@ public class KruskalMST
             }
         }
     }
-    public Iterable<Edge> edges()
+
+    public Iterable<Edge> KruskalMST()
     { return mst; }
 }
