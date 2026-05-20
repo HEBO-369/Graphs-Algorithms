@@ -98,10 +98,8 @@ public class Benchmark {
         long[] dijkstraTimes = new long[RUNS];
         long[] dagTimes = new long[RUNS];
         Random rand = new Random(42);
-
+        int source = 0;
         for (int i = 0; i < RUNS; i++) {
-            int source = rand.nextInt(G.V());
-
             long start = System.nanoTime();
             G.dijkstra(source);
             dijkstraTimes[i] = System.nanoTime() - start;

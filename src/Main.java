@@ -6,10 +6,9 @@ public class Main {
 
         // Trigger the evaluation benchmarks
 
-        int[] sizes = {1000, 2000, 3000, 4000, 5000};
+        int[] sizes = {100, 500, 1000, 5000, 10000};
         int numberOfRuns = 5;
 
         Benchmark.runAllBenchmarks(sizes, numberOfRuns);
-        Benchmark.runAllBenchmarks(sizes, 5);
     }
 }
